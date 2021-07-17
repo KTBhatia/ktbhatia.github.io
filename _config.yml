@@ -2,7 +2,7 @@ title:              Shell
 email:              kedar.t.bhatia@gmail.com
 description:        Tech Blog
 author:             Kedar Bhatia
-baseurl:            "/ktbhatia.github.io/"
+#baseurl:            "/ktbhatia.github.io/"
 url:                "https://ktbhatia.github.io"
 
 # Social Profiles
