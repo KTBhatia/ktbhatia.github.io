@@ -14,8 +14,8 @@ find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
 <img width="588" height="117" alt="ASM2" src="https://github.com/user-attachments/assets/1d36a00c-a2a3-44cb-b521-680c1e7f829d" />
 
 Seemed like ASM config files took up too much space.
-Solution was simple to just, rm -rf var/ts/var/sync/sync_*_full_update , as described here --https://my.f5.com/manage/s/article/K03345470
-Thought tiny Bash script would be fun for removal of files periodially adjusted using cron.  
+rm -rf var/ts/var/sync/sync_*_full_update , as described here --https://my.f5.com/manage/s/article/K03345470 works just fine, but
+bash script for removal of files is better.  
 
 A simple log file keeps the history of files and deletions
 <img width="393" height="89" alt="ASM1" src="https://github.com/user-attachments/assets/8aa7243b-1f64-4e91-9d19-fcf4b0bf6f3f" />
