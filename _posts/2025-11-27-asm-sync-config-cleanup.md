@@ -1,20 +1,13 @@
 ---
-title:  "My Awesome Bash Tool – Do X in One Command"
+title:  "ASM config files cleanup script"
 date:   2025-11-27
 categories: bash linux automation
 ---
 
-# My Awesome Bash Tool – Do X in One Command
+# Simple Bash shell script to cleanup ASM config files
 
-Write a short, catchy introduction here (2–4 sentences).
-
-Example:  
-I got tired of manually doing [boring task] every day, so I wrote a tiny Bash script that does it in one second.  
-Zero dependencies, works on Linux/macOS (and even Windows WSL/Git Bash).
-
+I got tired of manually doing removing ASM files that got generated on F5 every hour filling up /var every day, so I wrote a tiny Bash script that does the removal of files periodially adjusted using cron.  
 ## Features
-- Does this
-- Does that
 - Super fast
 - No root required
 
