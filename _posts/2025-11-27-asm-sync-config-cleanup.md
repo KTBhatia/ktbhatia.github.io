@@ -2,7 +2,7 @@
 title:  "ASM config files cleanup script"
 date:   2025-11-27
 categories: bash linux automation
-Works on Big-IP 13.x – 17.x.
+Works on : Big-IP 13.x – 17.x.
 ---
 
 # Simple Bash shell script to cleanup ASM config files
