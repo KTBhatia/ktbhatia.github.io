@@ -1,3 +1,16 @@
 ---
 Title:ASM config cleanup
 ---
+
+# Automating Cisco ACI Tenant Creation
+I used Python and the ACI REST API to automate tenant deployment.
+
+## Tools
+- Python 3
+- Requests library
+- Cisco ACI sandbox
+
+## Code Snippet
+```python
+import requests
+# Your example code here
