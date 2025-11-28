@@ -6,10 +6,14 @@ categories: bash linux automation
 
 # Simple Bash shell script to cleanup ASM config files
 
-I got tired of manually doing removing ASM files that got generated on F5 every hour filling up /var every day, so I wrote a tiny Bash script that does the removal of files periodially adjusted using cron.  
-## Features
-- Super fast
-- No root required
+In our F5 setup I came across /var getting filled up often. Below command gives top 10 files consuming space 
+on /var partition
+
+```bash
+find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
+
+Solution was simple to just **rm-rf <file>** , as described here --https://my.f5.com/manage/s/article/K03345470
+so I wrote a tiny Bash script that does the removal of files periodially adjusted using cron.  
 
 ## Install & run in one line (recommended)
 
