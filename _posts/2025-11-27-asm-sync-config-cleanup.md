@@ -14,13 +14,13 @@ find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
 
 
 <p align="center">
-  <img src="/vendor/ASM1.PNG" alt="Before cleanup – disk full of ASM sync files" width="700"/>
+  <img src="/assets/vendor/ASM1.PNG" alt="Before cleanup – disk full of ASM sync files" width="700"/>
   <br>
   <small>Before running the cleanup script</small>
 </p>
 
 <p align="center">
-  <img src="/vendor/ASM2.PNG" alt="Top 10 files consuming space" width="700"/>
+  <img src="/assets/vendor/ASM2.PNG" alt="Top 10 files consuming space" width="700"/>
   <br>
   <small>Output of <code>find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10</code></small>
 </p>
