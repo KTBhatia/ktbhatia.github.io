@@ -3,15 +3,15 @@ title: "Simple Bash Script to Cleanup ASM Config Files"
 date: 2025-11-27
 categories: bash linux automation
 Tested on : Big-IP 13.x – 17.x.
-permalink: /2025/11/27/asm-sync-config-cleanup.html  # ← This fixes the URL
+permalink: /2025/11/27/asm-sync-config-cleanup.html  
 ---
 
 # Simple Bash shell script to cleanup ASM config files
 In F5 Active/Standby setup I came across /var getting filled up often. Below command gives top 10 files consuming space 
 on /var partition
 
-```bash
-find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
+
+<br><small><code>find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10</code></small>
 
 <p align="center">
   <img src="/img/ASM1.PNG" alt="Disk almost full from ASM sync files" width="750"/>
