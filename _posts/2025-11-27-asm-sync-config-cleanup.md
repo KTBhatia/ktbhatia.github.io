@@ -11,7 +11,8 @@ on /var partition
 
 ```bash
 find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
-<img width="588" height="117" alt="ASM2" src="https://github.com/user-attachments/assets/1d36a00c-a2a3-44cb-b521-680c1e7f829d" />
+<img width="588" height="117" alt="ASM2" src="https://github.com/user-attachments/assets/f8e0228f-d0e7-4562-a2d5-adcbe42f1001" />
+
 
 Seemed like ASM config files took up too much space.
 rm -rf var/ts/var/sync/sync_*_full_update , as described here --https://my.f5.com/manage/s/article/K03345470 works just fine, but
