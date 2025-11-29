@@ -4,6 +4,7 @@ date: 2025-11-27
 categories: bash linux automation
 Tested on : Big-IP 13.x – 17.x.
 permalink: /2025/11/27/asm-sync-config-cleanup.html  
+hero: false
 ---
 
 # Simple Bash shell script to cleanup ASM config files
