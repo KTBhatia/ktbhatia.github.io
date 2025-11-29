@@ -11,18 +11,8 @@ on /var partition
 
 ```bash
 find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
-
-### Before & After Cleanup
-
-<p align="center">
-  <img src="/assets/ASM1.PNG" alt="Disk full" width="750"/>
-  <br><small>Disk almost full because of old ASM sync files</small>
-</p>
-
-<p align="center">
-  <img src="/assets/ASM2.PNG" alt="Top 10 files" width="750"/>
-  <br><small>Top 10 biggest files on /var partition</small>
-</p>
+<img width="588" height="117" alt="ASM2" src="https://github.com/user-attachments/assets/afc107d8-370d-4ebb-b3ef-ff03803427f6" />
+<img width="393" height="89" alt="ASM1" src="https://github.com/user-attachments/assets/2ef0777c-c3f7-4ff9-ab8a-8e09f88b2bf7" />
 
 Seemed like ASM config files took up too much space.
 rm -rf var/ts/var/sync/sync_*_full_update , as described here --https://my.f5.com/manage/s/article/K03345470 works just fine, but
