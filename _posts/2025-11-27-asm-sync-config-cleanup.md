@@ -13,12 +13,12 @@ on /var partition
 find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
 
 <p align="center">
-  <img src="/img/posts/ASM1.PNG" alt="Disk almost full from ASM sync files" width="750"/>
+  <img src="/img/ASM1.PNG" alt="Disk almost full from ASM sync files" width="750"/>
   <br><small>/var partition filled with old ASM config sync files</small>
 </p>
 
 <p align="center">
-  <img src="/img/posts/ASM2.PNG" alt="Top 10 biggest files on /var" width="750"/>
+  <img src="/img/ASM2.PNG" alt="Top 10 biggest files on /var" width="750"/>
   <br><small>Output of <code>find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10</code></small>
 </p>
 Seemed like ASM config files took up too much space.
