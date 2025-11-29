@@ -1,8 +1,9 @@
 ---
-title:  "ASM config files cleanup script"
-date:   2025-11-27
+title: "Simple Bash Script to Cleanup ASM Config Files"
+date: 2025-11-27
 categories: bash linux automation
 Tested on : Big-IP 13.x – 17.x.
+permalink: /2025/11/27/asm-sync-config-cleanup.html  # ← This fixes the URL
 ---
 
 # Simple Bash shell script to cleanup ASM config files
