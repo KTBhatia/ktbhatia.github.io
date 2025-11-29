@@ -10,9 +10,9 @@ permalink: /2025/11/27/asm-sync-config-cleanup.html
 In F5 Active/Standby setup I came across /var getting filled up often. Below command gives top 10 files consuming space 
 on /var partition
 
-
+<p>
 <br><small><code>find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10</code></small>
-
+</p>
 <p align="center">
   <img src="/img/ASM1.PNG" alt="Disk almost full from ASM sync files" width="750"/>
   <br><small>/var partition filled with old ASM config sync files</small>
