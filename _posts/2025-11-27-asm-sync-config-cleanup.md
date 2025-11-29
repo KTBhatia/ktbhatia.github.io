@@ -10,9 +10,20 @@ In F5 Active/Standby setup I came across /var getting filled up often. Below com
 on /var partition
 
 ```bash
-find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10<img width="588" height="117" alt="ASM2" src="https://github.com/user-attachments/assets/98f8f46e-9f5f-4ebd-b840-eb386a506f6b" />
+find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10
 
 
+<p align="center">
+  <img src="/vendor/ASM1.PNG" alt="Before cleanup – disk full of ASM sync files" width="700"/>
+  <br>
+  <small>Before running the cleanup script</small>
+</p>
+
+<p align="center">
+  <img src="/vendor/ASM2.PNG" alt="Top 10 files consuming space" width="700"/>
+  <br>
+  <small>Output of <code>find /var -xdev -type f -exec du -hs {} \; | sort -rn | head -10</code></small>
+</p>
 
 
 Seemed like ASM config files took up too much space.
