@@ -29,9 +29,6 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
   
-console:
-  style: hacker              # Neon green-on-black terminal (case-sensitive!)
-  listen_for_clients_preferred_style: false  # Forces hacker style (ignores OS dark mode)
 
 header_pages:                # Required for navigation & full theme load
   - index.md
