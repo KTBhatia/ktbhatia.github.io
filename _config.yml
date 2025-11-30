@@ -26,6 +26,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
 remote_theme: b2a3e8/jekyll-theme-console
-style: hacker          # ← green-on-black terminal glory
-show_hero: true
-hero_subtitle: "F5 • Linux • Automation • Bash"
+console:
+  style: hacker                 # forces green-on-black terminal
+  listen_for_clients_preferred_style: false   # disables OS dark-mode override
+show_hero_on_post: false        # removes huge grey banner from posts (you wanted this)
