@@ -1,18 +1,20 @@
-// Import variables
-@import "./variables";
+---
+---
+@import "{{ site.theme }}";
 
-// Import Bootstrap
-@import "../../bootstrap/scss/bootstrap";
+// Earth.com Styling
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+}
 
-// Global CSS
-@import "./global";
+h1, h2, .post-link {
+  font-family: "Playfair Display", serif;
+  color: #111 !important;
+  text-decoration: none;
+}
 
-// Components
-@import "./components/buttons";
-@import "./components/navbar";
-
-// Sections
-@import "./sections/contact";
-@import "./sections/footer";
-@import "./sections/masthead";
-@import "./sections/post";
+.site-header {
+  border-top: 5px solid #0077B5; // Signature Blue
+  border-bottom: 1px solid #eee;
+}
