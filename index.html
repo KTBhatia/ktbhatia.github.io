@@ -1,5 +1,51 @@
 ---
-layout: home
-background: '/img/galaxy.jpg'
-hero_height: 150px
+layout: default
+title: Home
+pagination:
+  enabled: true
 ---
+<section class="hero wrap">
+  <p class="hero__eyebrow">{{ site.tagline }}</p>
+  <h1>Software, systems, and the occasional rabbit hole.</h1>
+  <p>{{ site.description }}</p>
+</section>
+
+<section class="wrap">
+  <div class="section-heading">
+    <h2>Latest posts</h2>
+    <span class="count">{{ site.posts.size }} total</span>
+  </div>
+
+  <div class="post-grid">
+    {% for post in paginator.posts %}
+    <a href="{{ post.url | relative_url }}" class="post-card">
+      <div class="post-card__meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        {% if post.tags.size > 0 %}<span class="post-card__tag">{{ post.tags | first }}</span>{% endif %}
+      </div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+      <span class="post-card__read">
+        read post
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}">&larr; newer</a>
+    {% else %}
+      <span class="disabled">&larr; newer</span>
+    {% endif %}
+    <span>page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}">older &rarr;</a>
+    {% else %}
+      <span class="disabled">older &rarr;</span>
+    {% endif %}
+  </div>
+  {% endif %}
+</section>
