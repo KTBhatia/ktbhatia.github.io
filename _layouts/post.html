@@ -1,10 +1,15 @@
 ---
 layout: default
 ---
+{% assign cat_key = page.tags | first | default: "default" %}
+{% assign cat = site.data.categories[cat_key] | default: site.data.categories["default"] %}
+<div class="post-banner-wrap wrap">
+  {% include post-cover.html tag=cat_key class="post-cover--banner" %}
+</div>
 <article class="post wrap">
   <div class="post__eyebrow">
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-    {% if page.tags.size > 0 %}<span class="tag">{{ page.tags | first }}</span>{% endif %}
+    {% if page.tags.size > 0 %}<span class="tag" style="color: {{ cat.color2 }}; background: {{ cat.color1 }}22;">{{ page.tags | first }}</span>{% endif %}
     <span>·</span>
     <span>{{ content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
   </div>

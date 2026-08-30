@@ -1,0 +1,20 @@
+{% assign cat_key = include.tag | default: "default" %}
+{% assign cat = site.data.categories[cat_key] | default: site.data.categories["default"] %}
+<div class="post-cover{% if include.class %} {{ include.class }}{% endif %}" style="--c1: {{ cat.color1 }}; --c2: {{ cat.color2 }};">
+  <span class="post-cover__icon">
+    {% case cat.icon %}
+    {% when "sparkle" %}
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6L12 3Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/></svg>
+    {% when "server" %}
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="6" rx="1.4" stroke="white" stroke-width="1.4"/><rect x="4" y="14" width="16" height="6" rx="1.4" stroke="white" stroke-width="1.4"/><circle cx="7.5" cy="7" r="0.9" fill="white"/><circle cx="7.5" cy="17" r="0.9" fill="white"/></svg>
+    {% when "book" %}
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5c-.8 0-1.5-.7-1.5-1.5v-13Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5c.8 0 1.5-.7 1.5-1.5v-13Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/></svg>
+    {% when "bug" %}
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="8" height="10" rx="4" stroke="white" stroke-width="1.4"/><path d="M12 8V5M9 5.5 8 4M15 5.5l1-1.5M4 12h4M16 12h4M5 17l3-1.5M19 17l-3-1.5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+    {% when "rocket" %}
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c3 2 4.5 5.5 4 10l-4 4-4-4c-.5-4.5 1-8 4-10Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/><circle cx="12" cy="9" r="1.5" stroke="white" stroke-width="1.4"/><path d="M9 16l-2.5 2.5M15 16l2.5 2.5" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+    {% else %}
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 16c4-1 6-5 6-10 5 0 8 3 8 7 0 4-4 7-8 7-3 0-5-1-6-4Z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 16C9 13 12 10 18 6" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+    {% endcase %}
+  </span>
+</div>

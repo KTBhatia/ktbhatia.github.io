@@ -1,0 +1,24 @@
+meta:
+  color1: "#8B5CF6"
+  color2: "#5B3FD6"
+  icon: sparkle
+infra:
+  color1: "#2E90E8"
+  color2: "#0E5FB8"
+  icon: server
+learning:
+  color1: "#F2A13A"
+  color2: "#D1791A"
+  icon: book
+debugging:
+  color1: "#F0564F"
+  color2: "#C7332C"
+  icon: bug
+projects:
+  color1: "#14B8A6"
+  color2: "#0B8577"
+  icon: rocket
+default:
+  color1: "#0B6E4F"
+  color2: "#084D38"
+  icon: leaf

@@ -4,10 +4,15 @@ title: Home
 pagination:
   enabled: true
 ---
-<section class="hero wrap">
-  <p class="hero__eyebrow">{{ site.tagline }}</p>
-  <h1>Software, systems, and the occasional rabbit hole.</h1>
-  <p>{{ site.description }}</p>
+<section class="hero">
+  <div class="wrap hero__inner">
+    <div>
+      <p class="hero__eyebrow">{{ site.tagline }}</p>
+      <h1>Software, systems, and the occasional rabbit hole.</h1>
+      <p>{{ site.description }}</p>
+    </div>
+    <div class="hero__art" aria-hidden="true"></div>
+  </div>
 </section>
 
 <section class="wrap">
@@ -18,17 +23,22 @@ pagination:
 
   <div class="post-grid">
     {% for post in paginator.posts %}
-    <a href="{{ post.url | relative_url }}" class="post-card">
-      <div class="post-card__meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-        {% if post.tags.size > 0 %}<span class="post-card__tag">{{ post.tags | first }}</span>{% endif %}
+    {% assign cat_key = post.tags | first | default: "default" %}
+    {% assign cat = site.data.categories[cat_key] | default: site.data.categories["default"] %}
+    <a href="{{ post.url | relative_url }}" class="post-card" style="--c1: {{ cat.color1 }}; --c2: {{ cat.color2 }};">
+      {% include post-cover.html tag=cat_key %}
+      <div class="post-card__body">
+        <div class="post-card__meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          {% if post.tags.size > 0 %}<span class="post-card__tag" style="color: {{ cat.color2 }}; background: {{ cat.color1 }}22;">{{ post.tags | first }}</span>{% endif %}
+        </div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+        <span class="post-card__read" style="color: {{ cat.color2 }};">
+          read post
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
       </div>
-      <h3>{{ post.title }}</h3>
-      <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
-      <span class="post-card__read">
-        read post
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
     </a>
     {% endfor %}
   </div>
