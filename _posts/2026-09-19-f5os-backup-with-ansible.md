@@ -74,17 +74,19 @@ all:
 ```
 Useful verification commands :
 1. Useful to check syntax of inventory file
+```yaml
 ansible-inventory -i inventory.yml --list --yaml 
 ansible-playbook -i inventory.yml F5osbackup.yaml --syntax-check
-
+```
 2. Dry Run check
+```yaml
 ansible-playbook -i inventory.yml F5osbackup.yaml --check
-
+```
 after deleting some old backup file was able to get to get the curls to work properly.
-![alt text](image.png)
+![alt text](/assets/images/file_transfer.png)
 and the MD5 hash matched too:
-![alt text](image-1.png) 
-![alt text](image-2.png)
+![alt text](/assets/images/Md5_hash_F5OS.png) 
+![alt text](/assets/images/Md5_hash_server.png)
 
 I decided to stick with the Ansible scripts as they are convinient and most use cases work with modules without need to customize eg deletion of file after the backup copy.
 
