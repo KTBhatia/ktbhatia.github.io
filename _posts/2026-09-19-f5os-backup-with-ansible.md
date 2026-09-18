@@ -82,13 +82,19 @@ ansible-playbook -i inventory.yml F5osbackup.yaml --syntax-check
 ```yaml
 ansible-playbook -i inventory.yml F5osbackup.yaml --check
 ```
-after deleting some old backup file was able to get to get the curls to work properly.
-![alt text](/assets/images/file_transfer.png)
-and the MD5 hash matched too:
-![alt text](/assets/images/Md5_hash_F5OS.png) 
-![alt text](/assets/images/Md5_hash_server.png)
 
-I decided to stick with the Ansible scripts as they are convinient and most use cases work with modules without need to customize eg deletion of file after the backup copy.
+
+Oddly, once I cleared out the older backup files from previous failed attempts, the original RESTCONF/curl approach started transferring the full file correctly too. 
+
+I removed old backup files on Backup server and from the F5 Host as well.
+
+- **Once it started working:** file sizes matched, and so did the checksums
+
+```bash
+md5sum /data/backup/F5_LB/f5os/f5os_config_backup
+9e7249f9d0fbcb6437cf65ca4e116f58  /data/backup/F5_LB/f5os/f5os_config_backup
+```
+I decided to stick with the Ansible scripts as its easy to add more to inventory file with other useful things like idempotency.
 
 
 
