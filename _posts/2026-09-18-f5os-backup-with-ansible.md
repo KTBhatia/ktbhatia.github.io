@@ -2,6 +2,7 @@
 title: "F5OS backups using Ansible"
 tags: [Ansible, Automation]
 excerpt: "Backing up F5OS with Ansible "
+render_with_liquid: false
 ---
 
 Newer F5 VELOS/rSeries devices have microservices based F5OS running as the hypervisor(host OS) layer which is different from the previous generation iSeries/Viprions platforms that have BigIP TMOS playing the role on both Hypervisor and Guest layers.
