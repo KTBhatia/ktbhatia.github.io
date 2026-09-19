@@ -5,8 +5,7 @@ excerpt: "Backing up F5OS with Ansible "
 ---
 
 Newer F5 VELOS/rSeries devices have microservices based F5OS running as the hypervisor(host OS) layer which is different from the previous generation iSeries/Viprions platforms that have BigIP TMOS playing the role on both Hypervisor and Guest layers.
-
-[![Alt Text](/assets/images/vcmp_f5os.jpg)]
+![Alt Text](/assets/images/vcmp_f5os.jpg)
 
 Having migrated to new rSeries - required some bit of code to pull backup host OS config as push option wasnt available like in some products like Cisco FMC. No change to the way Tenants were backed up as that was still TMOS where we simply backup the .ucs archive. 
 
