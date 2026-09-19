@@ -6,10 +6,15 @@ excerpt: "Backing up F5OS with Ansible "
 
 Newer F5 VELOS/rSeries devices have microservices based F5OS running as the hypervisor(host OS) layer which is different from the previous generation iSeries/Viprions platforms that have BigIP TMOS playing the role on both Hypervisor and Guest layers.
 
-Having migrated to new rSeries - required some bit of code to pull backup host OS config as push option wasnt available like in some products like Cisco FMC. No change to the way Tenants were backed up as that was still TMOS where we simply backup the .ucs archive. I planned to do this with shell script compiled of curl based RESTCONF calls given in https://my.f5.com/manage/s/article/K000140649
+Having migrated to new rSeries - required some bit of code to pull backup host OS config as push option wasnt available like in some products like Cisco FMC. No change to the way Tenants were backed up as that was still TMOS where we simply backup the .ucs archive. 
+
+I planned to do this with shell script compiled of curl based RESTCONF calls given in https://my.f5.com/manage/s/article/K000140649
+
 I set Initial Primary key for DB in the UI(mandatory step to restore configs during RMA etc), following that the process was to:
 
+
 1.get token and authenticate  --> 2.generate config on target --> 3.copy config to backup server.
+
 
 Till step 2 all okay, step 3 did not seem to work. Backup file was 160K and transfered file was 80bytes. double checked - syntax was no problem, but file wasnt copying correctly.
 
