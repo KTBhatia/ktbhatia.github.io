@@ -83,6 +83,7 @@ https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/f5os.html
 The first task creates a backup file and copies to remote server.If file exists its owerwritten with new config backup file followed by copy.
 
 After fixing syntax errors (ansible is picky with indents) - ran the playbook.
+
 1. Useful to check syntax of inventory file
 ```yaml
 ansible-inventory -i inventory.yml --list --yaml 
