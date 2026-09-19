@@ -89,12 +89,12 @@ After fixing syntax errors (ansible is picky with indents) - ran the playbook.
 ansible-inventory -i inventory.yml --list --yaml 
 ansible-playbook -i inventory.yml F5osbackup.yaml --syntax-check
 ```
-did a dryrun 
+2. Did a dryrun 
 
 ``` yaml
 ansible-playbook -i inventory.yml F5osbackup.yaml --check
 ```
-and once succeded, pushed the change.
+3. And once succeded, pushed the change.
 
 ``` yaml
 ansible-playbook -i inventory.yml F5osbackup.yaml 
@@ -123,8 +123,6 @@ all:
           ansible_host: 4.4.4.4
           
 ```
-Useful verification commands :
-
 
 Oddly, once I cleared out the older backup files from previous failed attempts, the original RESTCONF/curl approach started transferring the full file correctly too. 
 
