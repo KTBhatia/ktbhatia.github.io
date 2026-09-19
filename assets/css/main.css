@@ -483,12 +483,11 @@ img { max-width: 100%; display: block; }
 }
 
 .post__body pre {
-  background: #14171a;
-  color: #eceee9;
+  background: #6b6f47;
+  color: #2b2b26;
   padding: 20px 22px;
   border-radius: var(--radius);
   overflow-x: auto;
-  margin: 0 0 26px;
 }
 
 .post__body pre code {
@@ -583,10 +582,10 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.10);
+  border: 1px solid rgba(0,0,0,0.18);
   border-radius: var(--radius);
-  color: #cfd3d6;
+  color: #2b2b26;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
 }
@@ -594,8 +593,8 @@ img { max-width: 100%; display: block; }
 .copy-btn svg { width: 15px; height: 15px; }
 
 .copy-btn:hover {
-  background: rgba(255,255,255,0.16);
-  color: #fff;
+  background: rgba(0,0,0,0.18);
+  color: #16160f;
 }
 
 .copy-btn.copied {
