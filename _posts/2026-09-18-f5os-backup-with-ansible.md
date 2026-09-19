@@ -107,7 +107,14 @@ I removed old backup files on Backup server and from the F5 Host as well.
 md5sum /data/backup/F5_LB/f5os/f5os_config_backup
 9e7249f9d0fbcb6437cf65ca4e116f58  /data/backup/F5_LB/f5os/f5os_config_backup
 ```
-I decided to stick with the Ansible scripts as its easy to add more to inventory file with other useful things like idempotency.
+I decided to stick with the Ansible script, and set up a cron for it.
+
+```bash
+chmod +x /path/to/f5os_config_backup #adding permission to execute
+0 0 * * * /usr/local/bin/f5os_config_backup >> /var/log/f5os_backup.log 2>&1 # setting up to backup every day 12 am
+```
+
+
 
 
 
