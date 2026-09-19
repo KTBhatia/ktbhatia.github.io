@@ -18,8 +18,16 @@ I set Initial Primary key for DB in the UI(mandatory step to restore configs dur
 
 Till step 2 all okay, step 3 did not seem to work. Backup file was 160K and transfered file was 80bytes. double checked - syntax was no problem, but file wasnt copying correctly.
 
-I thought trying to do this via Ansible, as I saw some bug defects for the download via restconf. Altough Ansible would eventually use the same calls. SO..againt better my judgement and  some coffee I referred : https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/modules_3_0/f5os_config_backup_module.html and https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/f5os.html 
+I thought trying to do this via Ansible, as I saw some bug defects for the download via restconf. Altough Ansible would eventually use the same calls. 
 
+SO..againt better my judgement and  some coffee I referred :
+https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/modules_3_0/f5os_config_backup_module.html 
+
+and
+
+https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/f5os.html 
+
+to create :
 **Playbook** (`backup-f5os.yml`):
 ```yaml
 ---
