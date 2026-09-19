@@ -579,6 +579,13 @@ img { max-width: 100%; display: block; }
   width: 100%;
   box-sizing: border-box;
 }
+.post__body .highlighter-rouge,
+.post__body .highlight,
+.code-block,
+.code-block pre {
+  width: 100%;
+  box-sizing: border-box;
+}
 
 .site-footer a { color: var(--text-muted); }
 .site-footer a:hover { color: var(--accent); }
