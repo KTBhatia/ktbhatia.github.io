@@ -67,7 +67,7 @@ https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/f5os.html
   tasks:
     - name: Recreate existing backup file and upload it to remote server
       f5os_config_backup:
-        name: "{{ inventory_hostname }}_{{ lookup('pipe', 'date +%m%d%Y') }}"
+        name: "{% raw %}{{ inventory_hostname }}_{{ lookup('pipe', 'date +%m%d%Y') }}{% raw %}"
         remote_host: 1.2.3.4 # Backup Server IP
         remote_path: /data/backup/F5_LB/f5os/
         remote_user: admin
