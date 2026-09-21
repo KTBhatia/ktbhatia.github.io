@@ -19,29 +19,33 @@ Having migrated to new rSeries - required some bit of code to pull backup host O
 
 In my case, No change to the way Tenants were backed up as that was still TMOS where we simply backup the .ucs archive. 
 
-I planned to do this with shell script compiled of curl based RESTCONF calls given in
+I set Initial Primary key through cli., this can be done progrramatically too. It has same purpose as the BIG-IP Master Key, Its used to decrypt encrypted passwords in your config file. This would be needed for eg. when restoring configs to a new box. Used below KB for that.
+
+https://my.f5.com/manage/s/article/K47512994
+
+I planned to do the backup with shell script compiled of curl based RESTCONF calls given in
 
 https://my.f5.com/manage/s/article/K000140649
 
-I set Initial Primary key for DB in the UI(mandatory step to restore configs during RMA etc), following that the process was to:
-
+the process was simple:
 
 ![Alt Text](/assets/images/token_auth.jpg)
 
-Till step 2 all okay, step 3 did not seem to work. Backup file was 160K and transfered file was 80bytes. double checked - syntax was no problem, but file wasnt copying correctly.
+I was able to connect to the F5 applicance and generate a config file. 
+Config file was 160K and transfered file was 80bytes, double checked - syntax was no problem, but file wasnt copying correctly.
 
 I thought trying to do this via Ansible, as I saw some bug defects for the download via restconf. Altough Ansible would eventually use the same calls. 
 
 So..instead getting deeper in trioubleshooting the curl outputs, I decided to try a playbook.
 
-First step was to install collections the set of F5 modules, and netcommon modules that provide connectivity to F5.
+First step was to install collections the set of F5 modules, and netcommon modules that provide connectivity to F5. I already had Python3, pip installed.
 
 ```bash
 ansible-galaxy collection install f5networks.f5_modules 
 ansible-galaxy collection install ansible.netcommon 
 ```
 
-I found below references helpful and mixed matched and customized the code to my requirements.
+Enough side quests, Finally it was time to create playbook I refered below docs and modified code to customize to my envoirnment .
 
 https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/modules_3_0/f5os_config_backup_module.html 
 
@@ -90,7 +94,7 @@ https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/f5os.html
         state: absent
 
 ```
-The first task creates a backup file and copies to remote server.If file exists its owerwritten with new config backup file followed by copy.
+The first task creates a backup file and copies to remote server. If file exists its owerwritten with new config backup file followed by a copy transaction to backup server.
 
 After fixing syntax errors (ansible is picky with indents) - ran the playbook.
 
@@ -134,9 +138,7 @@ all:
           
 ```
 
-Oddly, once I cleared out the older backup files from previous failed attempts, the original RESTCONF/curl approach started transferring the full file correctly too. 
-
-I removed old backup files on Backup server and from the F5 Host as well.
+Back to the curl attempts - Once I cleared out the older backup files (80KB files) from previous failed attempts, it started transferring the full file correctly too. 
 
 - **Once it started working:** file sizes matched, and so did the checksums
 
@@ -151,7 +153,9 @@ chmod +x /path/to/f5os_config_backup #adding permission to execute
 0 0 * * * /usr/local/bin/f5os_config_backup >> /var/log/f5os_backup.log 2>&1 # setting up to backup every day 12 am
 ```
 
+There are some improvements to be put in like vault for password and vars files. Next ansible playbook would be setup that way or maybe I just modify this. 
 
+Thanks for reading!
 
 
 
