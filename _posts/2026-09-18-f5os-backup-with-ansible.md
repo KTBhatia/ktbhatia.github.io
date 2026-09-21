@@ -67,7 +67,7 @@ https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/f5os.html
   tasks:
     - name: Recreate existing backup file and upload it to remote server
       f5os_config_backup:
-        name: "{% raw %}{{ inventory_hostname }}_{{ lookup('pipe', 'date +%m%d%Y') }}{% raw %}"
+        name: "{% raw %}{{ inventory_hostname }}{% endraw %}_{% raw %}{{ lookup('pipe', 'date +%m%d%Y') }}{% endraw %}"
         remote_host: 1.2.3.4 # Backup Server IP
         remote_path: /data/backup/F5_LB/f5os/
         remote_user: admin
@@ -79,7 +79,7 @@ https://clouddocs.f5.com/products/orchestration/ansible/devel/f5os/f5os.html
 
     - name: Remove backup file
       f5os_config_backup:
-        name: "{{ inventory_hostname }}_{{ lookup('pipe', 'date +%m%d%Y') }}" #Took help of AI to get this Hostname_date as file name
+        name: "{% raw %}{{ inventory_hostname }}{% endraw %}_{% raw %}{{ lookup('pipe', 'date +%m%d%Y') }}{% endraw %}" #Took help of AI to get this Hostname_date as file name
         state: absent
 
 ```
