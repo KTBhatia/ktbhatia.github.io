@@ -153,9 +153,8 @@ chmod +x /path/to/f5os_config_backup #adding permission to execute
 0 0 * * * /usr/local/bin/f5os_config_backup >> /var/log/f5os_backup.log 2>&1 # setting up to backup every day 12 am
 ```
 
-There are some improvements to be put in like vault for password and vars files. Next ansible playbook would be setup that way or maybe I just modify this. 
+There are some improvements to be put in like vault for password and vars files. Next ansible playbook would be setup that way or maybe I will just modify this. 
 
-Thanks for reading!
 
 
 

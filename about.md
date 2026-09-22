@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm Kedar — this is where I write up the tech I'm building, breaking, and learning at any given moment. Expect notes on software projects, infrastructure experiments, and the odd deep dive when something interesting refuses to make sense on the first try.
+I'm Kedar — this is where I write up the tech I'm building, breaking, and learning at any given moment. Expect notes on Network projects, infrastructure experiments, and the odd deep dive when something interesting refuses to make sense on the first try.
 
 No fixed schedule, no fixed topic list. If it's stuck in my head, it probably ends up here eventually.
 
