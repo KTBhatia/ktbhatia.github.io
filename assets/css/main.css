@@ -3,13 +3,13 @@
    ============================================================ */
 :root {
   --bg: #636363;
-  --bg-alt: #f4f5f8;
+  --bg-alt: #0b2980;
   --text: #14213d;
   --text-muted: #5c6478;
   --accent: #e8511f;
   --accent-dark: #c23f14;
-  --accent-soft: #fdeae1;
-  --navy: #0f2246;
+  --accent-soft: #9f3f12;
+  --navy: #061531;
   --navy-deep: #0a1830;
   --gold: #e8511f;
   --line: #e6e8ee;
