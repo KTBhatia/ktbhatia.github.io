@@ -2,13 +2,13 @@
    Design tokens
    ============================================================ */
 :root {
-  --bg: #636363;
-  --bg-alt: #0b2980;
-  --text: #14213d;
-  --text-muted: #5c6478;
+  --bg: #ffffff;
+  --bg-alt: #f0f2f6;
+  --text: #0a0f1a;
+  --text-muted: #e9e9e9;
   --accent: #e8511f;
   --accent-dark: #c23f14;
-  --accent-soft: #9f3f12;
+  --accent-soft: #eac5b3;
   --navy: #061531;
   --navy-deep: #0a1830;
   --gold: #e8511f;
