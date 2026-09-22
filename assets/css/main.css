@@ -2,7 +2,7 @@
    Design tokens
    ============================================================ */
 :root {
-  --bg: #ffffff;
+  --bg: #636363;
   --bg-alt: #f4f5f8;
   --text: #14213d;
   --text-muted: #5c6478;
@@ -86,8 +86,8 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .wordmark {
