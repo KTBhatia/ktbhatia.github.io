@@ -1,0 +1,27 @@
+---
+layout: default
+title: Posts
+permalink: /posts/
+---
+<section class="wrap">
+  <div class="section-heading">
+    <h2>All posts</h2>
+    <span class="count">{{ site.posts.size }} total</span>
+  </div>
+
+  {% assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in by_year %}
+  <p class="post-list__year">{{ year.name }}</p>
+  <ul class="post-list">
+    {% for post in year.items %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+        <span class="post-list__title">{{ post.title }}</span>
+        {% if post.tags.size > 0 %}<span class="post-list__tag">{{ post.tags | join: ", " }}</span>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</section>

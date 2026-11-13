@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a href="{{ '/' | relative_url }}" class="wordmark">
+      <span class="wordmark__name">{{ site.title }}</span>
+    </a>
+    <span class="site-header__tagline">{{ site.tagline }}</span>
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">index</a>
+      <a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}active{% endif %}">about</a>
+      <a href="{{ '/posts/' | relative_url }}" class="{% if page.url == '/posts/' %}active{% endif %}">posts</a>
+      <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+    </nav>
+  </div>
+</header>

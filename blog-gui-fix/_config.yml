@@ -1,0 +1,44 @@
+title: The Network Byte Order
+tagline: Its always the Network!
+description: My thoughts for all things Packets, Network, Automation.
+url: "https://ktbhatia.github.io"
+baseurl: ""
+
+author:
+  name: Kedar Bhatia
+
+# Building
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+paginate: 6
+paginate_path: "/page:num/"
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+future: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
